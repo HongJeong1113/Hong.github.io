@@ -369,35 +369,35 @@
         };
         
         	
-					function AddCookie(name)//쿠키생성
-					{
+	function AddCookie(name)//쿠키생성
+	{
 					
-						SetCookie("startnm",startnm);
-						SetCookie("startX",startX);
-						SetCookie("startY",startY);
-						SetCookie("endnm",endnm);
-						SetCookie("endX",endX);
-						SetCookie("endY",endY);
+		SetCookie("startnm",startnm);
+		SetCookie("startX",startX);
+		SetCookie("startY",startY);
+		SetCookie("endnm",endnm);
+		SetCookie("endX",endX);
+		SetCookie("endY",endY);
 
-					}
-					function DelCookie(name)//쿠키삭제
-					{
-						deleteCookie("startnm","");
-						deleteCookie("startX","");
-						deleteCookie("startY","");
-						deleteCookie("endnm","");
-						deleteCookie("endX","");
-						deleteCookie("endY","");
-					}
-					function ShowCookie(){
-						if(startnm=null||endnm=null){
-							document.write("즐겨찾기가 없습니다.")
-						}
-							else{
-						document.write ("<p style=' font-size: 15px; color:rgb(43, 203, 140);'> 출발지 : " + startnm + "<br>")
-						document.write( "<p style=' font-size: 15px; color:rgb(43, 203, 140);'> 도착지 : " + endnm + "<br><br>")
-					}
-					}
+	}
+	function DelCookie(name)//쿠키삭제
+	{
+		deleteCookie("startnm","");
+		deleteCookie("startX","");
+		deleteCookie("startY","");
+		deleteCookie("endnm","");
+		deleteCookie("endX","");
+		deleteCookie("endY","");
+	}
+	function ShowCookie(){
+		if(startnm=null||endnm=null){
+			document.write("즐겨찾기가 없습니다.")
+		}
+		else{
+			document.write ("<p style=' font-size: 15px; color:rgb(43, 203, 140);'> 출발지 : " + startnm + "<br>")
+			document.write( "<p style=' font-size: 15px; color:rgb(43, 203, 140);'> 도착지 : " + endnm + "<br><br>")
+		}
+	}
 
 		var CCTV_markers = [];
 		var police_markers = [];
