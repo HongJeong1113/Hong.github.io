@@ -146,7 +146,7 @@
 						<div id="dstnm" style="font: size 14px; font-weight: bold; color: rgb(43, 203, 140);">
 							도착지 : 
 						</div>
-							<button type='button' class="searchbutton" onclick="AddCookie();alert('장소가 저장되었습니다'); ">즐겨찾기</button>
+							<button type='button' class="searchbutton" onclick="AddCookie();alert('장소가 저장되었습니다');return false; alert('장소가 없습니다.') ">즐겨찾기</button>
 					<br>
 	
 					<!--경로에 따른 거리 및 시간-->
@@ -370,30 +370,30 @@
         			
 	function AddCookie()//쿠키생성
 	{	
-		var strnm = GetCookie("strnm");
-		var strX = GetCookie("strX");
-		var strY = GetCookie("strY");
-		var dstnm = GetCookie("dstnm");
-		var dstX = GetCookie("dstX");
-		var dstY = GetCookie("dstY");	
+		var strnm = GetCookie("startnm");
+		var strX = GetCookie("startX");
+		var strY = GetCookie("startY");
+		var dstnm = GetCookie("endnm");
+		var dstX = GetCookie("endX");
+		var dstY = GetCookie("endY");	
 		var expire = new Date ();
-		var path=setPath("/");
-		SetCookie("strnm",strnm,expire,path);
+		
+		SetCookie("startnm",startnm,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 		
-		SetCookie("strX",strX,expire,path);
+		SetCookie("starrX",startX,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("strY",strY,expire,path);
+		SetCookie("startY",startY,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("dstnm",dstnm,expire,path);
+		SetCookie("endnm",endnm,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("dstX",dstX,expire,path);
+		SetCookie("endX",endX,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("dstY",dstY,expire,path);
+		SetCookie("endY",endY,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
 	}
@@ -407,18 +407,18 @@
 		deleteCookie("dstY","");
 	}
 	function ShowCookie(){
-		var strnm = GetCookie("strnm");
-		var strX = GetCookie("strX");
-		var strY = GetCookie("strY");
-		var dstnm = GetCookie("dstnm");
-		var dstX = GetCookie("dstX");
-		var dstY = GetCookie("dstY");	
-		console.log("출발지:"+strnm);
-		console.log(strX);
-		console.log(strY);
-		console.log("도착지:"+dstnm);
-		console.log(dstX);
-		console.log(dstY);
+		var startnm = GetCookie("startnm");
+		var startX = GetCookie("startX");
+		var startY = GetCookie("startY");
+		var endnm = GetCookie("endnm");
+		var endX = GetCookie("endX");
+		var endY = GetCookie("endY");	
+		console.log("출발지:"+startnm);
+		console.log(startX);
+		console.log(startY);
+		console.log("도착지:"+endnm);
+		console.log(endX);
+		console.log(endY);
 	}
 		var CCTV_markers = [];
 		var police_markers = [];
