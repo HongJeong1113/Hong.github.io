@@ -185,11 +185,16 @@
 				<a href="#" class="sidebar_close_btn" onclick="closeSidebar()">&times;</a>
 				<div id="menu_wrap" class="bg_white">
 				<b style="font-size: 20px; color:rgb(43, 203, 140);">즐겨찾기</b><br><br>
-				<button type="submit" class="cookiebutton" onclick="ShowCookie(); return true;">즐겨찾기 보기</button>
-				
 				<button type="submit" class="cookiebutton" onclick="DelCookie(); return true;">즐겨찾기 삭제</button>
  				<br><br>
- 				<b style="font-size: 20px; color:rgb(43, 203, 140);">저장된 즐겨찾기</b><br>		
+ 				<b style="font-size: 20px; color:rgb(43, 203, 140);">저장된 즐겨찾기</b><br>
+			<div id="strnm" style="font: size 14px; font-weight: bold; color: rgb(43, 203, 140);">
+							출발지 : 
+						</div>
+						<div id="dstnm" style="font: size 14px; font-weight: bold; color: rgb(43, 203, 140);">
+							도착지 : 
+						</div>
+			
 		</div>	
 		<div id ="subSidebar_4" class ="subSidebar">
 			<div class="contents">
@@ -379,13 +384,24 @@
 		deleteCookie("dstY","");
 	}
 	function ShowCookie(){
-		if(strnm==null||dstnm==null){
-			document.write("즐겨찾기가 없습니다.")
-		}
-		else{
-			document.write ("<p style=' font-size: 15px; color:rgb(43, 203, 140);'> 출발지 : " + strnm + "<br>")
-			document.write( "<p style=' font-size: 15px; color:rgb(43, 203, 140);'> 도착지 : " + dstnm + "<br><br>")
-		}
+		 var startnm = document.getElementById('placenm')
+		 var startX = document.getElementById('coordinateX')
+            var startY = document.getElementById('coordinateY')
+            strnm.innerText = "출발지 : " + startnm.innerText
+            strX.innerText = startX.innerText
+            strY.innerText = startY.innerText
+            console.log(startnm)
+            console.log(startX)
+            console.log(startY)
+		 var endnm = document.getElementById('placenm')
+            var endX = document.getElementById('coordinateX')
+            var endY = document.getElementById('coordinateY')
+            dstnm.innerText = "도착지 : " + endnm.innerText
+            dstX.innerText = endX.innerText
+            dstY.innerText = endY.innerText
+            console.log(endnm)
+            console.log(endX)
+            console.log(endY)
 	}
 		var CCTV_markers = [];
 		var police_markers = [];
