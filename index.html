@@ -185,7 +185,7 @@
 				<a href="#" class="sidebar_close_btn" onclick="closeSidebar()">&times;</a>
 				<div id="menu_wrap" class="bg_white">
 				<b style="font-size: 20px; color:rgb(43, 203, 140);">즐겨찾기</b><br><br>
-				<button type="submit" class="cookiebutton" onclick="DelCookie(); return true;">즐겨찾기 삭제</button>
+				<button type="submit" class="cookiebutton" onclick="delCookie(); return true;">즐겨찾기 삭제</button>
  				<br><br>
  				<b style="font-size: 20px; color:rgb(43, 203, 140);">저장된 즐겨찾기</b><br>
 			<div id="strnm" style="font: size 14px; font-weight: bold; color: rgb(43, 203, 140);">
@@ -374,7 +374,7 @@
 		SetCookie("dstX",dstX);
 		SetCookie("dstY",dstY);
 	}
-	function DelCookie(name)//쿠키삭제
+	function elCookie(name)//쿠키삭제
 	{
 		deleteCookie("strnm","");
 		deleteCookie("strX","");
@@ -384,9 +384,10 @@
 		deleteCookie("dstY","");
 	}
 	function ShowCookie(){
-		 var startnm = document.getElementById('placenm')
+		var startnm = document.getElementById('placenm')
 		 var startX = document.getElementById('coordinateX')
             var startY = document.getElementById('coordinateY')
+	    $.Cookie.raw=true;
             strnm.innerText = "출발지 : " + startnm.innerText
             strX.innerText = startX.innerText
             strY.innerText = startY.innerText
@@ -396,6 +397,7 @@
 		 var endnm = document.getElementById('placenm')
             var endX = document.getElementById('coordinateX')
             var endY = document.getElementById('coordinateY')
+	    $.Cookie.raw=true;
             dstnm.innerText = "도착지 : " + endnm.innerText
             dstX.innerText = endX.innerText
             dstY.innerText = endY.innerText
