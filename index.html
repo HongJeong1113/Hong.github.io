@@ -17,7 +17,7 @@
 	<script
 		src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=2530315e93e47fca95bcdf52cafb039d&libraries=clusterer,services"></script>
 		<script>//쿠키설정
-		function GetCookie (name) {
+		function GetCookie (name, value) {
     		var pairs = document.cookie.split(";"); // 쿠키문자열을 ;을 경계로 분할
     		for(var i=0; i<pairs.length; i++) {
         		var pair = pairs[i].trim(); // 쿠키 앞뒤의 빈칸 제거
@@ -185,6 +185,7 @@
 				<a href="#" class="sidebar_close_btn" onclick="closeSidebar()">&times;</a>
 				<div id="menu_wrap" class="bg_white">
 				<b style="font-size: 20px; color:rgb(43, 203, 140);">즐겨찾기</b><br><br>
+				<button type="submit" class="cookiebutton" onclick="ShowCookie(); return true;">즐겨찾기 보기</button>
 				<button type="submit" class="cookiebutton" onclick="delCookie(); return true;">즐겨찾기 삭제</button>
  				<br><br>
  				<b style="font-size: 20px; color:rgb(43, 203, 140);">저장된 즐겨찾기</b><br>
@@ -374,7 +375,7 @@
 		SetCookie("dstX",dstX);
 		SetCookie("dstY",dstY);
 	}
-	function elCookie(name)//쿠키삭제
+	function delCookie(name)//쿠키삭제
 	{
 		deleteCookie("strnm","");
 		deleteCookie("strX","");
@@ -384,20 +385,20 @@
 		deleteCookie("dstY","");
 	}
 	function ShowCookie(){
-		var startnm = document.getElementById('placenm')
-		 var startX = document.getElementById('coordinateX')
+			 var startnm = document.getElementById('placenm')
+			 var startX = document.getElementById('coordinateX')
             var startY = document.getElementById('coordinateY')
-	    $.Cookie.raw=true;
+            $.Cookie.raw=true;
             strnm.innerText = "출발지 : " + startnm.innerText
             strX.innerText = startX.innerText
             strY.innerText = startY.innerText
             console.log(startnm)
             console.log(startX)
             console.log(startY)
-		 var endnm = document.getElementById('placenm')
+			var endnm = document.getElementById('placenm')
             var endX = document.getElementById('coordinateX')
             var endY = document.getElementById('coordinateY')
-	    $.Cookie.raw=true;
+            $.Cookie.raw=true;
             dstnm.innerText = "도착지 : " + endnm.innerText
             dstX.innerText = endX.innerText
             dstY.innerText = endY.innerText
