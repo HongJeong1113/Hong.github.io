@@ -377,19 +377,25 @@
 	var dstX = GetCookie("dstX");
 	var dstY = GetCookie("dstY");	
 	var expire = new Date ();	
-	expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+	        expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		path.setpath("/");
 		SetCookie("strnm",strnm,expire,path);
-	expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		path.setpath("/");
 		SetCookie("strX",strX,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		path.setpath("/");
 		SetCookie("strY",strY,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		path.setpath("/");
 		SetCookie("dstnm",dstnm,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		path.setpath("/");
 		SetCookie("dstX",dstX,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		path.setpath("/");
 		SetCookie("dstY",dstY,expire,path);
-		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		
 	}
 	function delCookie()//쿠키삭제
 	{
