@@ -366,8 +366,14 @@
             console.log(endY)
         };
         			
-	function AddCookie(name)//쿠키생성
-	{				
+	function AddCookie()//쿠키생성
+	{	
+	var strnm = GetCookie("strnm");
+	var strX = GetCookie("strX");
+	var strY = GetCookie("strY");
+	var dstnm = GetCookie("dstnm");
+	var dstX = GetCookie("dstX");
+	var dstY = GetCookie("dstY");		
 		SetCookie("strnm",strnm);
 		SetCookie("strX",strX);
 		SetCookie("strY",strY);
@@ -375,7 +381,7 @@
 		SetCookie("dstX",dstX);
 		SetCookie("dstY",dstY);
 	}
-	function delCookie(name)//쿠키삭제
+	function delCookie()//쿠키삭제
 	{
 		deleteCookie("strnm","");
 		deleteCookie("strX","");
@@ -385,26 +391,18 @@
 		deleteCookie("dstY","");
 	}
 	function ShowCookie(){
-			 var startnm = document.getElementById('placenm')
-			 var startX = document.getElementById('coordinateX')
-            var startY = document.getElementById('coordinateY')
-            $.Cookie.raw=true;
-            strnm.innerText = "출발지 : " + startnm.innerText
-            strX.innerText = startX.innerText
-            strY.innerText = startY.innerText
-            console.log(startnm)
-            console.log(startX)
-            console.log(startY)
-			var endnm = document.getElementById('placenm')
-            var endX = document.getElementById('coordinateX')
-            var endY = document.getElementById('coordinateY')
-            $.Cookie.raw=true;
-            dstnm.innerText = "도착지 : " + endnm.innerText
-            dstX.innerText = endX.innerText
-            dstY.innerText = endY.innerText
-            console.log(endnm)
-            console.log(endX)
-            console.log(endY)
+		var strnm = GetCookie("strnm");
+	var strX = GetCookie("strX");
+	var strY = GetCookie("strY");
+	var dstnm = GetCookie("dstnm");
+	var dstX = GetCookie("dstX");
+	var dstY = GetCookie("dstY");	
+			console.log("출발지:"+strnm);
+			console.log(strX);
+			console.log(strY);
+			console.log("도착지:"+dstnm);
+			console.log(dstX);
+			console.log(dstY);
 	}
 		var CCTV_markers = [];
 		var police_markers = [];
