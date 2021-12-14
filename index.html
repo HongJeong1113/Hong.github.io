@@ -27,11 +27,14 @@
     		}
     		return null;
 		}
-		function SetCookie (name, value) {
-   			 var cookieStr = name + "=" + escape(value);
-      		  
-     		   document.cookie = cookieStr;
-			}
+		function SetCookie (name, value, expireDate, path) {
+		var cookieStr = name + "=" + escape(value) +
+        ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()));
+         Cookie.setPath("/");
+        document.cookie = cookieStr;
+      
+		}
+
 </script>
 </head>
 
@@ -373,13 +376,21 @@
 	var strY = GetCookie("strY");
 	var dstnm = GetCookie("dstnm");
 	var dstX = GetCookie("dstX");
-	var dstY = GetCookie("dstY");		
-		SetCookie("strnm",strnm);
-		SetCookie("strX",strX);
-		SetCookie("strY",strY);
-		SetCookie("dstnm",dstnm);
-		SetCookie("dstX",dstX);
-		SetCookie("dstY",dstY);
+	var dstY = GetCookie("dstY");	
+	var expire = new Date ();	
+	expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		SetCookie("strnm",strnm,expire,path);
+	expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		SetCookie("strX",strX,expire,path);
+		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		SetCookie("strY",strY,expire,path);
+		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		SetCookie("dstnm",dstnm,expire,path);
+		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		SetCookie("dstX",dstX,expire,path);
+		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
+		SetCookie("dstY",dstY,expire,path);
+		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	}
 	function delCookie()//쿠키삭제
 	{
