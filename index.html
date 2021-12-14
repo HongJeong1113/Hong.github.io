@@ -29,8 +29,7 @@
 		}
 		function SetCookie (name, value, expireDate, path) {
 		var cookieStr = name + "=" + escape(value) +
-        ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()));
-         Cookie.setPath("/");
+        ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()))+(path=("/"));
         document.cookie = cookieStr;
       
 		}
