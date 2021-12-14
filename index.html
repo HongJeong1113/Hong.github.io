@@ -29,7 +29,7 @@
 		}
 		function SetCookie (name, value, expireDate, path) {
 		var cookieStr = name + "=" + escape(value) +
-        ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()));
+        ((expireDate == null)?"":("; expires=" + expireDate.toGMTString()))+(path=("/"));
         document.cookie = cookieStr;
       
 		}
@@ -377,22 +377,23 @@
 		var dstX = GetCookie("dstX");
 		var dstY = GetCookie("dstY");	
 		var expire = new Date ();
-		SetCookie("strnm",strnm,expire);
+		var path=setPath("/");
+		SetCookie("strnm",strnm,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 		
-		SetCookie("strX",strX,expire);
+		SetCookie("strX",strX,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("strY",strY,expire);
+		SetCookie("strY",strY,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("dstnm",dstnm,expire);
+		SetCookie("dstnm",dstnm,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("dstX",dstX,expire);
+		SetCookie("dstX",dstX,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("dstY",dstY,expire);
+		SetCookie("dstY",dstY,expire,path);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
 	}
