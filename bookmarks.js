@@ -25,6 +25,8 @@ function get_path() {
     end = new kakao.maps.LatLng(end_lat, end_lng);
     strnm.innerText = sessionStorage.getItem("strnm");
     dstnm.innerText = sessionStorage.getItem("dstnm");
+    passListString = sessionStorage.getItem("passList");
+    passList = passListString.split(",");
 
     alert('경로를 불러옵니다.');
 
