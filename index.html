@@ -82,13 +82,13 @@
 				<div class="menu" onclick="openSubSidebar(3)"
 					onmouseover="this.children[0].src='assets/bookmark_white.png'"
 					onmouseout="this.children[0].src='assets/bookmark_green.png'">
-					<img src="assets/bookmark_green.png" alt="즐겨찾기">
+					<img src="assets/bookmark_green.png" alt="이전 기록">
 					이전 기록
 				</div>
 				<div class="menu" onclick="openSubSidebar(4)"
 					onmouseover="this.children[0].src='assets/call_white.png'"
 					onmouseout="this.children[0].src='assets/call_green.png'">
-					<img src="assets/call_green.png" alt="전화 및 문자">
+					<img src="assets/call_green.png" alt="더보기">
 					더보기
 				</div>
 				<div class="menu" onclick="openSubSidebar(5)"
@@ -191,16 +191,21 @@
 				<a href="#" class="sidebar_close_btn" onclick="closeSidebar()">&times;</a>
 				<div id="menu_wrap" class="bg_white" style="padding-left: 15px;">
 				<b style="font-size: 20px; color:rgb(43, 203, 140);">즐겨찾기</b><br><br>
-				<button type="submit" class="cookiebutton" onclick="ShowCookie(); return true;">즐겨찾기 보기</button>
-				<button type="submit" class="cookiebutton" onclick="delCookie(); return true;">즐겨찾기 삭제</button>
+				<button type="button" class="searchbutton" onclick="save_path(); return false;">저장하기</button>
+				<button type="button" class="searchbutton" onclick="get_path(); return false;">불러오기</button>
  				<br><br>
- 				<b style="font-size: 20px; color:rgb(43, 203, 140);">저장된 즐겨찾기</b><br>
-			<div id="strnm" style="font: size 14px; font-weight: bold; color: rgb(43, 203, 140);">
-							출발지 : 
-						</div>
-						<div id="dstnm" style="font: size 14px; font-weight: bold; color: rgb(43, 203, 140);">
-							도착지 : 
-						</div>
+				<hr>
+				<br>
+ 				<b style="font-size: 20px; color:rgb(43, 203, 140); margin-bottom: 10px;">저장된 경로 정보</b>
+				<br>
+				<br>
+				<div id="Session_str" style="font: size 14px; color: rgb(43, 203, 140);">
+					<b>출발지 : </b>
+				</div>
+				<br>
+				<div id="Session_dst" style="font: size 14px; color: rgb(43, 203, 140);">
+					<b>도착지 : </b>
+				</div>
 		</div>
 		
 		<!-- 비상연락처 서브사이드바  -->
@@ -227,7 +232,7 @@
 					<div style="float: left;">
 						문자내용<br>
 						<div style="float: left; margin-right: 5px;">
-							<img src="assets/dot.png">
+							<img src="assets/dot.png.png">
 						</div>
 						<div style="float: right;">
 							<textarea rows="3" cols="30" id="smscont" name="smscont">안심귀가 서비스 비상문자입니다</textarea>
@@ -336,19 +341,23 @@
 
 	<script>
 
-        
+		// 마커 정보를 불러올 객체 생성
+		var markers = [];        
 
         // 출발지와 도착지 객체 생성
         var start = new kakao.maps.LatLng(35.13367784973298, 129.1049204111099);
         var strnm = document.getElementById('strnm');
+			strnm.innerText = sessionStorage.getItem("strnm");
         var strX = document.getElementById('strX');
         var strY = document.getElementById('strY');
 
         var end = new kakao.maps.LatLng(35.132568, 129.091948);
-        var dstnm = document.getElementById('dstnm')
-        var dstX = document.getElementById('dstX')
-        var dstY = document.getElementById('dstY')
+        var dstnm = document.getElementById('dstnm');
+			dstnm.innerText = sessionStorage.getItem("dstnm");
+        var dstX = document.getElementById('dstX');
+        var dstY = document.getElementById('dstY');
 
+		
 		// 지도 표시
 		var mapContainer = document.getElementById("map"); // 지도를 표시할 div
 		var mapOption = {
