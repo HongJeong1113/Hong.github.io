@@ -86,7 +86,7 @@ function call() {
 
 // 사이드바 open
 function openSidebar() {
-    document.getElementById("sidebar").style.width = "150px";
+    document.getElementById("sidebar").style.width = "90px";
     var subSidebar = document.getElementsByClassName("subSidebar");
     for (var i = 0; i < subSidebar.length; i++) {
         document.getElementsByClassName("subSidebar")[i].style.width = "0px";
