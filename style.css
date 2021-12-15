@@ -419,7 +419,8 @@ body {
     width: 80px;
     height: 25px;
     margin-top: 5px;
-    border-radius: 3px;
+    border: 2px solid rgb(34, 204, 140);
+    border-radius: 5px;
 }
 .searchbutton:hover {
     background-color: rgb(40, 244, 168);
