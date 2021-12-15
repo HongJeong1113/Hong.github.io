@@ -370,18 +370,18 @@
         			
 	function AddCookie()//쿠키생성
 	{	
-		var strnm = GetCookie("startnm");
-		var strX = GetCookie("startX");
-		var strY = GetCookie("startY");
-		var dstnm = GetCookie("endnm");
-		var dstX = GetCookie("endX");
-		var dstY = GetCookie("endY");	
+		var startnm = GetCookie("startnm");
+		var startX = GetCookie("startX");
+		var startY = GetCookie("startY");
+		var endnm = GetCookie("endnm");
+		var endX = GetCookie("endX");
+		var endY = GetCookie("endY");	
 		var expire = new Date ();
 		
 		SetCookie("startnm",startnm,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 		
-		SetCookie("starrX",startX,expire);
+		SetCookie("startX",startX,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
 		SetCookie("startY",startY,expire);
