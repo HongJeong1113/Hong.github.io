@@ -370,30 +370,30 @@
         			
 	function AddCookie()//쿠키생성
 	{	
-		var startnm = GetCookie("startnm");
-		var startX = GetCookie("startX");
-		var startY = GetCookie("startY");
-		var endnm = GetCookie("endnm");
-		var endX = GetCookie("endX");
-		var endY = GetCookie("endY");	
+		var strnm = GetCookie("strnm");
+		var strX = GetCookie("strX");
+		var strY = GetCookie("strY");
+		var dstnm = GetCookie("dstnm");
+		var dstX = GetCookie("dstX");
+		var dstY = GetCookie("dstY");	
 		var expire = new Date ();
 		
-		SetCookie("startnm",startnm,expire);
+		SetCookie("strnm",strnm,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 		
-		SetCookie("startX",startX,expire);
+		SetCookie("strX",strX,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("startY",startY,expire);
+		SetCookie("strY",strY,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("endnm",endnm,expire);
+		SetCookie("dstnm",dstnm,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("endX",endX,expire);
+		SetCookie("dstX",dstX,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
-		SetCookie("endY",endY,expire);
+		SetCookie("dstY",dstY,expire);
 		expire.setTime(expire.getTime() + (365 * 24 * 3600 * 1000));
 	
 	}
@@ -407,18 +407,18 @@
 		deleteCookie("dstY","");
 	}
 	function ShowCookie(){
-		var startnm = GetCookie("startnm");
-		var startX = GetCookie("startX");
-		var startY = GetCookie("startY");
-		var endnm = GetCookie("endnm");
-		var endX = GetCookie("endX");
-		var endY = GetCookie("endY");	
+		var strnm = GetCookie("strnm");
+		var strX = GetCookie("strX");
+		var strY = GetCookie("strY");
+		var dstnm = GetCookie("dstnm");
+		var dstX = GetCookie("dstX");
+		var dstY = GetCookie("dstY");	
 		console.log("출발지:"+startnm);
 		console.log(startX);
 		console.log(startY);
-		console.log("도착지:"+endnm);
-		console.log(endX);
-		console.log(endY);
+		console.log("도착지:"+dstnm);
+		console.log(dstX);
+		console.log(dstY);
 	}
 		var CCTV_markers = [];
 		var police_markers = [];
