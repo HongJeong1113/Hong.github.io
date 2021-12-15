@@ -229,7 +229,7 @@ body {
     z-index: 1;
     top: 0;
     left: 70px;
-    background-color: black;
+    background-color: white;
     overflow: hidden;
     transition: 0.5s;
     padding-top: 20px;
