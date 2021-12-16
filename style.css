@@ -288,12 +288,15 @@ body {
 }
 #menu_wrap {
     position:relative;
-    width:280px;
+    width:246px;
     overflow-y:hidden;
     background:rgba(43, 203, 140, 0.1);
+    padding: 20px;
+    margin: 10px;
     z-index: 1;
     font-size:12px;
     border-radius: 10px;
+    
 }
 .bg_white {
     background:#fff;
@@ -498,3 +501,7 @@ textarea:hover {
     font-size: 40px;
 }
 
+.searchlist {
+    height: 350px;
+    overflow-y: scroll;
+};
