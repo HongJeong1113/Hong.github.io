@@ -103,24 +103,25 @@
 
 		<div id ="subSidebar_1" class ="subSidebar">
 
-			<div class="contents" style="padding-left: 15px;">
+			<div class="contents">
 				
 				<div style="width: 100%; height: 30px;">
 					<a href="#" class="sidebar_close_btn" onclick="closeSidebar()" style="float:right">&times;</a>
 				</div>
 
 				<br>
-				<div id="menu_wrap" class="bg_white">
+				<div id="menu_wrap" class="bg_white" style="width: 270px; padding: 6px">
 					<div class="option">
 						<div>
 							<!--키워드를 받아올 form-->
-							<form>
+							<div>
 								<b style="font-size: 20px; color:rgb(43, 203, 140);">키워드</b> : 
-								<input type="text" placeholder="검색 할 키워드 ex.부경대학교" id="keyword" size="18"> 
-							</form>
+								<!--키워드를 받아올 input태그-->
+								<input type="text" placeholder="검색 할 키워드 ex.부경대학교" id="keyword" size="18">
+							</div>
 							<br>
 							<!--키워드 검색을 실행할 submit 버튼-->
-							<button type="submit" class="searchbutton" onclick="searchPlaces(); return false;">검색하기</button>
+							<button type="button" class="searchbutton" onclick="searchPlaces(); return false;">검색하기</button>
 							<!--경유지 선택 버튼-->
 							<button type="button" class="searchbutton" onclick="selectMarkers(true); return false;">경유지</button>
 							<!--길찾기를 실행할 버튼-->
@@ -254,30 +255,30 @@
 				<hr style="margin-bottom: 10px; margin-left: 10px; margin-right: 10px;">
 				<!--사용된 api 정보를 summary와 list로 표기-->
 				<details>
-					<summary style="color:rgb(100, 100, 100); list-style:none; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">데이터 정보</summary>
+					<summary style="color:rgb(43, 203, 140); list-style:none; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">데이터 정보 ▼</summary>
 					<ul>
 						<li style="list-style:none">
 							<a href="https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15013094">CCTV</a>
 						</li>
 						<li style="list-style:none">
-							<a href="">비상벨</a>
+							<a href="https://www.data.go.kr/data/15028206/standard.do">비상벨</a>
 						</li>
 						<li style="list-style:none">
-							<a href="">경찰서</a>
+							<a href="https://www.data.go.kr/tcs/dss/selectFileDataDetailView.do?publicDataPk=15054711">경찰서</a>
 						</li>
 						<li style="list-style:none">
-							<a href="">소방서</a>
+							<a href="https://www.data.go.kr/data/15048243/fileData.do#/tab-layer-openapi">소방서</a>
 						</li>
 						<li style="list-style:none">
-							<a href="">응급실</a>
+							<a href="https://www.data.go.kr/data/15000563/openapi.do">응급실</a>
 						</li>
 						<li style="list-style:none">
-							<a href="">가로등</a>
+							<a href="https://www.data.go.kr/data/15017320/standard.do">가로등</a>
 						</li>
 					</ul>
 				</details>
 				<details>
-					<summary style="color:rgb(100, 100, 100); list-style:none; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">개발팀</summary>
+					<summary style="color:rgb(43, 203, 140); list-style:none; margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">개발팀 ▼</summary>
 					<ul>
 						<li style="list-style:none">
 							박홍정
@@ -344,6 +345,12 @@
 
 		// 마커 정보를 불러올 객체 생성
 		var markers = [];        
+		/*
+		mode == 0 이면 기본 모드
+		mode == 1 이면 길찾기 모드
+		경유지 선택과 마커 선택에서 클릭 이벤트 충돌을 막기 위해 구분
+		*/
+        var mode;
 
         // 출발지와 도착지 객체 생성
         var start = new kakao.maps.LatLng(35.13367784973298, 129.1049204111099);
